@@ -1,0 +1,6 @@
+redis
+fastapi
+uvicorn
+python-gemini-api
+requests
+pyautogui
