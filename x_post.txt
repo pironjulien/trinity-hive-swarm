@@ -11,19 +11,21 @@ Jour 2 : la Dialog Route exploitait les crédits trial Dialogflow CX (~510€ Fl
 Jour 3 : le Hive Swarm. Et celui-là change les règles du jeu. 🐝
 
 🔍 Le concept :
-L'interface web de Gemini est gratuite pour un usage personnel, limitée par compte. En exploitant la mécanique de Google Family Sharing — où chaque membre de la famille est un compte Google distinct — on crée un essaim de workers parallèles, chacun authentifié avec les cookies d'un compte secondaire.
+L'interface web de Gemini est gratuite pour un usage personnel, limitée par compte. Un abonnement Google AI (Pro à ~20€/mois, Ultra à ~270€/mois) donne accès à Gemini Advanced — et surtout, il est partageable avec 5 membres de la famille via Google Family Sharing.
 
-Le résultat : N workers = N× le débit. Zéro facturation API.
+Un seul abonnement = 6 comptes Google distincts = 6 workers parallèles, chacun authentifié avec ses propres cookies de session.
+
+Le résultat : N workers = N× le débit. Coût : un simple abonnement famille.
 
 ⚙️ La mécanique :
-1️⃣ Créer N comptes Google secondaires (comptes famille)
+1️⃣ Souscrire un abonnement Google AI et le partager via Family Sharing (jusqu'à 5 membres)
 2️⃣ Extraire les cookies de session Gemini de chaque compte (DevTools → Application → Cookies)
 3️⃣ Injecter les cookies dans des workers headless via Redis
 4️⃣ Orchestrer les missions via FastAPI — chaque worker est un agent autonome avec accès filesystem
 
 💡 Pourquoi c'est la route la plus dangereuse :
 → Chaque worker est un agent complet avec des outils (read, write, exec)
-→ Le scaling est linéaire et gratuit
+→ Le scaling est linéaire : 1 abo = 6 workers, 2 abos = 12 workers
 → Les comptes secondaires isolent totalement le compte principal
 → **Pour bloquer ce vecteur, Google devrait remettre en cause le fonctionnement même de Family Sharing et des sessions multi-comptes** — un changement qui impacterait TOUS les services Google, pas seulement Gemini
 
@@ -53,19 +55,21 @@ Day 2: the Dialog Route leveraged Dialogflow CX trial credits (~$600 Flows + ~$1
 Day 3: the Hive Swarm. And this one changes the rules of the game. 🐝
 
 🔍 The concept:
-Gemini's web interface is free for personal use, rate-limited per account. By leveraging Google Family Sharing mechanics — where each family member is a separate Google account — we create a swarm of parallel workers, each authenticated with a distinct secondary account's session cookies.
+Gemini's web interface is free for personal use, rate-limited per account. A Google AI subscription (Pro ~$22/month, Ultra ~$300/month) gives access to Gemini Advanced — and crucially, it's shareable with 5 family members via Google Family Sharing.
 
-The result: N workers = N× throughput. Zero API billing.
+One subscription = 6 distinct Google accounts = 6 parallel workers, each authenticated with its own session cookies.
+
+The result: N workers = N× throughput. Cost: one family subscription.
 
 ⚙️ The mechanics:
-1️⃣ Create N secondary Google accounts (family members)
+1️⃣ Subscribe to Google AI and share via Family Sharing (up to 5 members)
 2️⃣ Extract Gemini session cookies from each account (DevTools → Application → Cookies)
 3️⃣ Inject cookies into headless workers via Redis
 4️⃣ Orchestrate missions via FastAPI — each worker is an autonomous agent with filesystem access
 
 💡 Why this is the most dangerous route:
 → Each worker is a full agent with tools (read, write, exec)
-→ Scaling is linear and free
+→ Scaling is linear: 1 sub = 6 workers, 2 subs = 12 workers
 → Secondary accounts fully isolate the primary account
 → **To block this vector, Google would have to rethink how Family Sharing and multi-account sessions work** — a change that would impact ALL Google services, not just Gemini
 
