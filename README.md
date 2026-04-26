@@ -9,40 +9,36 @@
 
 ## What This Proves
 
-This project demonstrates **massive parallelization of a free AI web interface** by injecting secondary account cookies into headless workers, effectively turning a consumer-grade chatbot into an industrial API.
+This project demonstrates **client-side agentic swarm orchestration**. By networking multiple instances of a local Agentic IDE (like Antigravity) running on the same machine, Trinity transforms legitimate, consumer-grade user tools into an industrial, parallelized API.
 
 ### The Concept
 
-Google's Gemini web interface is free for personal use, rate-limited per-account. By leveraging **Google Family Sharing** mechanics — where each family member is a separate Google account — we create a swarm of parallel workers, each authenticated with a distinct secondary account cookie.
+Google's Gemini web interface is free for personal use. A **Google AI Family Sharing** subscription allows 6 family members to have distinct access.
+Instead of using headless scrapers that get easily flagged and blocked, Trinity connects each of the 6 Google accounts to a separate, local instance of an **Agentic IDE (Antigravity)**. She then uses a local Redis instance to orchestrate tasks across all 6 profiles.
 
-The result: **N workers = N× throughput**, with zero API billing.
+The result: **N workers = N× throughput**, running entirely on authorized local environments.
 
-### Why It's Devastating
+### Why It's Devastating (The Insidious Nature of Local Swarms)
 
-This is the hardest route for Google to block. To prevent this attack vector, Google would have to fundamentally rethink how Family Sharing and multi-account sessions work — changes that would impact **every Google service**, not just Gemini.
+This is the hardest route for Google to block because the traffic is fundamentally legitimate. To Google's servers, this looks exactly like a family of developers working on their respective machines using authorized Agentic IDEs.
+To prevent this attack vector, Google would have to forbid Agentic IDEs from using session cookies entirely, or dismantle the Family Sharing system.
 
 ### Key Features
-- **Free Parallelism** — 4 concurrent workers by default (scalable to N+)
-- **Total Isolation** — secondary account cookies keep your main account clean
-- **Zero API Cost** — no AI Studio or Vertex AI keys required
-- **Agentic Workers** — each worker has filesystem tools (read, write, list_dir, exec)
-- **Mission System** — JSON-based task dispatch via Redis queue
-- **FastAPI Gateway** — REST API for task submission and status monitoring
+- **Legitimate Network Signature** — Traffic comes from authorized Agentic IDEs, not headless bots.
+- **Free Parallelism** — 6 concurrent workers by default via Family Sharing.
+- **Total Isolation** — Secondary account sessions keep the main account clean.
+- **Agentic Workers** — Each worker is a full IDE instance with filesystem tools.
+- **Local Swarm Orchestration** — Redis coordinates the independent local agents.
 
 ## Architecture
 
-```
-┌─────────────┐     ┌──────────┐     ┌──────────────┐
-│  mission.py │────▶│  Redis   │────▶│ Worker V2 #1 │──▶ Cookie A (Family Member 1)
-│ Orchestrator│     │  Queue   │     │ Worker V2 #2 │──▶ Cookie B (Family Member 2)
-│             │     │          │     │ Worker V2 #3 │──▶ Cookie C (Family Member 3)
-│             │     │          │     │ Worker V2 #4 │──▶ Cookie D (Family Member 4)
-└─────────────┘     └──────────┘     └──────────────┘
-                         │
-                  ┌──────┴──────┐
-                  │ FastAPI GW  │
-                  │   :8000     │
-                  └─────────────┘
+```text
+┌─────────────────┐       ┌──────────┐       ┌────────────────────────┐
+│  mission.py     │──────▶│  Redis   │──────▶│ Antigravity Profile 1  │──▶ Cookie A (Family 1)
+│  (Swarm Leader) │       │  Queue   │       │ Antigravity Profile 2  │──▶ Cookie B (Family 2)
+│                 │       │ (Local)  │       │ Antigravity Profile 3  │──▶ Cookie C (Family 3)
+│                 │       │          │       │ Antigravity Profile 4  │──▶ Cookie D (Family 4)
+└─────────────────┘       └──────────┘       └────────────────────────┘
 ```
 
 ## Setup
