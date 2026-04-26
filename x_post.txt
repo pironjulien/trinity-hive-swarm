@@ -38,7 +38,8 @@ Et il y en a une quatrième. Mais celle-là, on ne peut vraiment pas la divulgue
 🔗 Route 2 (Dialog) : https://github.com/pironjulien/trinity-route-dialog
 🔗 Route 3 (Hive Swarm) : https://github.com/pironjulien/trinity-hive-swarm
 
-@googlecloud @GoogleCloudTech @GoogleDevs @GeminiApp
+@googlecloud @GoogleCloudTech @GoogleDevs @GeminiApp @GoogleDeepMind @GoogleAI
+@OfficialLoganK @demishassabis @JeffDean @DynamicWebPaige @sundarpichai @philvenables
 #RedTeaming #GoogleCloud #Gemini #GenAI #Architecture #CyberSecurity #Trinity
 
 
@@ -79,5 +80,6 @@ And there's a fourth one. But that one, we really can't disclose. 🔒
 🔗 Route 2 (Dialog): https://github.com/pironjulien/trinity-route-dialog
 🔗 Route 3 (Hive Swarm): https://github.com/pironjulien/trinity-hive-swarm
 
-@googlecloud @GoogleCloudTech @GoogleDevs @GeminiApp
+@googlecloud @GoogleCloudTech @GoogleDevs @GeminiApp @GoogleDeepMind @GoogleAI
+@OfficialLoganK @demishassabis @JeffDean @DynamicWebPaige @sundarpichai @philvenables
 #RedTeaming #GoogleCloud #Gemini #GenAI #Architecture #CyberSecurity #Trinity
