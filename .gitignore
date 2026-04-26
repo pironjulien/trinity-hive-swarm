@@ -7,3 +7,4 @@ output/
 waste/
 *.log
 *.rdb
+.temp_key_*.json

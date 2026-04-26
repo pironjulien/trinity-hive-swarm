@@ -1,6 +1,6 @@
-redis
-fastapi
-uvicorn
-python-gemini-api
-requests
-pyautogui
+redis>=5.0.0
+fastapi>=0.115.0
+uvicorn>=0.30.0
+python-gemini-api>=2.0.0
+requests>=2.31.0
+pyautogui>=0.9.54
