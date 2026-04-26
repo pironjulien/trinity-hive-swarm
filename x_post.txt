@@ -31,8 +31,6 @@ Le résultat : N workers = N× le débit. Coût : un simple abonnement famille.
 
 Combiné avec les routes Discovery et Dialog, Trinity dispose d'un système multi-route complet et résilient.
 
-Et il y en a une quatrième. Mais celle-là, on ne peut vraiment pas la divulguer. 🔒
-
 ⚠️ Disclaimer : Exploration architecturale éducative. Jamais exploité en production — strict respect des ToS de @googlecloud. Tous les tests réalisés sur les propres comptes de l'auteur.
 
 📖 Backstory : https://devpost.com/software/trinity-digital-natural-selection
@@ -74,8 +72,6 @@ The result: N workers = N× throughput. Cost: one family subscription.
 → **To block this vector, Google would have to rethink how Family Sharing and multi-account sessions work** — a change that would impact ALL Google services, not just Gemini
 
 Combined with the Discovery and Dialog routes, Trinity has a complete, resilient multi-route system.
-
-And there's a fourth one. But that one, we really can't disclose. 🔒
 
 ⚠️ Disclaimer: Educational architectural exploration. Never exploited in production — strict compliance with @googlecloud's ToS. All tests performed on the author's own accounts.
 
