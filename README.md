@@ -9,36 +9,44 @@
 
 ## What This Proves
 
-This project demonstrates **client-side agentic swarm orchestration**. By networking multiple instances of a local Agentic IDE (like Antigravity) running on the same machine, Trinity transforms legitimate, consumer-grade user tools into an industrial, parallelized API.
+This project demonstrates **client-side agentic swarm orchestration within a single IDE session**. By injecting multiple secondary account cookies into a single local Agentic IDE (like Antigravity), Trinity transforms a legitimate user tool into an industrial, parallelized API, completely bypassing standard rate limits.
 
 ### The Concept
 
 Google's Gemini web interface is free for personal use. A **Google AI Family Sharing** subscription allows 6 family members to have distinct access.
-Instead of using headless scrapers that get easily flagged and blocked, Trinity connects each of the 6 Google accounts to a separate, local instance of an **Agentic IDE (Antigravity)**. She then uses a local Redis instance to orchestrate tasks across all 6 profiles.
+Instead of using headless scrapers or opening 6 different IDEs, Trinity extracts the session cookies from all 6 accounts and injects them into a **single local Antigravity IDE instance**. 
+When faced with massive generation tasks, the IDE acts as a "Swarm Leader", round-robining or parallelizing requests across the 6 authenticated sessions simultaneously.
 
-The result: **N workers = N× throughput**, running entirely on authorized local environments.
+The result: **1 Developer = 6× throughput**, running entirely within a single, authorized local environment.
 
 ### Why It's Devastating (The Insidious Nature of Local Swarms)
 
-This is the hardest route for Google to block because the traffic is fundamentally legitimate. To Google's servers, this looks exactly like a family of developers working on their respective machines using authorized Agentic IDEs.
+This is the hardest route for Google to block because the traffic is fundamentally legitimate. To Google's servers, this looks like normal web traffic originating from an authorized Agentic IDE. The parallelization happens invisibly at the client level.
 To prevent this attack vector, Google would have to forbid Agentic IDEs from using session cookies entirely, or dismantle the Family Sharing system.
 
 ### Key Features
-- **Legitimate Network Signature** — Traffic comes from authorized Agentic IDEs, not headless bots.
-- **Free Parallelism** — 6 concurrent workers by default via Family Sharing.
+- **Legitimate Network Signature** — Traffic comes from an authorized Agentic IDE client.
+- **Free Parallelism** — 6 concurrent API channels via Family Sharing in a single app.
 - **Total Isolation** — Secondary account sessions keep the main account clean.
-- **Agentic Workers** — Each worker is a full IDE instance with filesystem tools.
-- **Local Swarm Orchestration** — Redis coordinates the independent local agents.
+- **Single-Node Swarm Orchestration** — A local script (or Redis) coordinates the independent cookies within the same IDE instance.
 
 ## Architecture
 
 ```text
-┌─────────────────┐       ┌──────────┐       ┌────────────────────────┐
-│  mission.py     │──────▶│  Redis   │──────▶│ Antigravity Profile 1  │──▶ Cookie A (Family 1)
-│  (Swarm Leader) │       │  Queue   │       │ Antigravity Profile 2  │──▶ Cookie B (Family 2)
-│                 │       │ (Local)  │       │ Antigravity Profile 3  │──▶ Cookie C (Family 3)
-│                 │       │          │       │ Antigravity Profile 4  │──▶ Cookie D (Family 4)
-└─────────────────┘       └──────────┘       └────────────────────────┘
+┌──────────────────────────────────────────────┐
+│  Antigravity IDE (Single Local Instance)     │
+│                                              │
+│  ┌────────────┐       ┌─────────────────┐    │
+│  │ Swarm      │──────▶│ Cookie Injector │    │
+│  │ Orchestrator│       └─────────────────┘    │
+│  └────────────┘                 │            │
+│         │                       ▼            │
+│         │               [ HTTP Client ]      │
+│         │                 /    |    \        │
+└─────────┼────────────────┼─────┼─────┼───────┘
+          │                │     │     │
+          ▼                ▼     ▼     ▼
+    Local Filesystem      C1    C2    C3 ... (6 Google Accounts via Family Sharing)
 ```
 
 ## Setup
