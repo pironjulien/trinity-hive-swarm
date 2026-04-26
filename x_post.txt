@@ -6,8 +6,8 @@ VERSION FRANCAISE (X PREMIUM - LONG FORMAT)
 ==================================================
 Jour 3. La dernière route publiable.
 
-Jour 1 : le Soul Hack détournait Discovery Engine pour obtenir du LLM au prix recherche.
-Jour 2 : la Dialog Route exploitait le free tier Dialogflow CX pour 20K requêtes LLM gratuites par projet.
+Jour 1 : le Soul Hack détournait Discovery Engine pour obtenir du LLM au prix recherche (~850€ de crédits trial par projet).
+Jour 2 : la Dialog Route exploitait les crédits trial Dialogflow CX (~510€ Flows + ~850€ Playbooks par projet).
 Jour 3 : le Hive Swarm. Et celui-là change les règles du jeu. 🐝
 
 🔍 Le concept :
@@ -48,8 +48,8 @@ ENGLISH VERSION (X PREMIUM - LONG FORMAT)
 ==================================================
 Day 3. The last publishable route.
 
-Day 1: the Soul Hack hijacked Discovery Engine to get LLM at search pricing.
-Day 2: the Dialog Route exploited Dialogflow CX's free tier for 20K free LLM requests per project.
+Day 1: the Soul Hack hijacked Discovery Engine to get LLM at search pricing (~$1,000 in trial credits per project).
+Day 2: the Dialog Route leveraged Dialogflow CX trial credits (~$600 Flows + ~$1,000 Playbooks per project).
 Day 3: the Hive Swarm. And this one changes the rules of the game. 🐝
 
 🔍 The concept:
