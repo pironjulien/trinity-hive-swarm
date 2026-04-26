@@ -1,7 +1,7 @@
-# 🐝 TRINITY HIVE SWARM — Cookie-Based Gemini Parallelization
+# 🐝 TRINITY HIVE SWARM — Local Agentic Swarm (Cookie Injection)
 
 **Status:** Proof of Concept  
-**Architecture:** Redis + FastAPI + Agentic Workers (Cookie Injection)  
+**Architecture:** Single Local IDE + Redis Orchestrator + 6 Parallel Sessions  
 **Author:** Julien Piron / Trinity Hackathon (2026)  
 **License:** MIT
 
