@@ -3,7 +3,7 @@
 **Status:** Proof of Concept  
 **Architecture:** Fan-Out / Fan-In / Mixture of Experts (MoE) Synthesis  
 **Author:** Julien Piron / Trinity Hackathon (2026)  
-**License:** MIT
+**License:** AGPL-3.0
 
 ---
 
@@ -149,7 +149,7 @@ The script:
 
 ```
 /
-├── LICENSE                            # MIT License
+├── LICENSE                            # AGPL-3.0 License
 ├── DISCLAIMER.md                      # Educational PoC disclaimer
 ├── README.md                          # This file
 ├── .env.example                       # Cookie pool template (6 slots)
